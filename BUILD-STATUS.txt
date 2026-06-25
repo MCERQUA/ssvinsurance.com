@@ -1,0 +1,5 @@
+BUILD_ID: CSi8P33wWxG9nfqLkDgq6
+Status: GREEN
+Pages: 20 routes (4 blog posts, 5 service pages)
+Images: 9 HF-generated SSV/UTV images
+Date: 2026-06-25

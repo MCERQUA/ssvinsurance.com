@@ -1,0 +1,30 @@
+<!--
+  Static form definitions for Netlify form detection (fightclub pattern).
+  This file is served at /__forms.html and lets Netlify's crawler detect forms
+  even though the real forms live inside Next.js React components.
+-->
+<form name="quote" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input type="hidden" name="form-name" value="quote" />
+  <input name="bot-field" />
+  <input name="name" />
+  <input name="email" />
+  <input name="phone" />
+  <input name="vehicleYear" />
+  <input name="vehicleMake" />
+  <input name="vehicleModel" />
+  <input name="agreedValue" />
+  <input name="riderAge" />
+  <input name="useType" />
+  <input name="competitionUse" />
+  <input name="state" />
+  <textarea name="message"></textarea>
+</form>
+
+<form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input type="hidden" name="form-name" value="contact" />
+  <input name="bot-field" />
+  <input name="name" />
+  <input name="email" />
+  <input name="phone" />
+  <textarea name="message"></textarea>
+</form>

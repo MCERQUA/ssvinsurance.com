@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   SSV INSURANCE — Trail Adventure base styles
+   Worker B (DESIGN). Token values live in tailwind.config.ts.
+   ============================================================ */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    background-color: theme("colors.canvas");
+    color: theme("colors.ink");
+    font-family: var(--font-body), Inter, system-ui, sans-serif;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading), "Plus Jakarta Sans", system-ui, sans-serif;
+    font-weight: 700;
+  }
+
+  /* Visible focus ring on every interactive element (a11y) — brand green */
+  :focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px theme("colors.canvas"),
+      0 0 0 4px theme("colors.brand.DEFAULT");
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: theme("colors.brand.DEFAULT");
+    color: #fff;
+  }
+}
+
+@layer components {
+  /* Premium form controls — usable on Netlify quote/contact forms */
+  .field-label {
+    @apply block font-body text-sm font-semibold text-ink mb-1.5;
+  }
+  .field-input {
+    @apply w-full rounded-xl border border-line bg-card px-4 py-3 font-body text-base text-ink
+      shadow-soft transition-all placeholder:text-muted/60
+      focus:border-brand focus:ring-2 focus:ring-brand/30 focus:outline-none;
+  }
+  .field-textarea {
+    @apply w-full rounded-xl border border-line bg-card px-4 py-3 font-body text-base text-ink
+      shadow-soft transition-all placeholder:text-muted/60 min-h-[140px] resize-y
+      focus:border-brand focus:ring-2 focus:ring-brand/30 focus:outline-none;
+  }
+}
+
+@layer utilities {
+  .container-xl      { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
+  .container-feature { @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8; }
+  .container-prose   { @apply max-w-3xl mx-auto px-4 sm:px-6 lg:px-8; }
+
+  .section-pad    { @apply py-20 md:py-28; }
+  .section-pad-lg { @apply py-24 md:py-32; }
+
+  .eyebrow {
+    @apply font-body text-xs sm:text-sm font-bold uppercase tracking-[0.18em] text-brand;
+  }
+
+  /* Trail-green gradient text — brand → brand-bright → cta amber.
+     Hero keyword + stat numbers + select H2 accents only — never everywhere. */
+  .text-trail {
+    background-image: linear-gradient(
+      100deg,
+      theme("colors.brand.DEFAULT"),
+      theme("colors.brand.bright"),
+      theme("colors.cta.DEFAULT")
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  /* Warm amber gradient text — for CTA pull-quotes / pricing callouts */
+  .text-amber-grad {
+    background-image: linear-gradient(
+      100deg,
+      theme("colors.cta.DEFAULT"),
+      theme("colors.cta.dark")
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  /* Faint dot texture for hero + CTA-light surfaces (atmospheric, ~5%) */
+  .bg-dots {
+    background-image: radial-gradient(
+      circle,
+      rgba(22, 32, 28, 0.05) 1px,
+      transparent 1px
+    );
+    background-size: 22px 22px;
+  }
+
+  /* Faint grid for dark brand sections (Stats / CTA / Footer peaks) */
+  .bg-grid-dark {
+    background-image: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.06) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+}
+
+/* Reduced-motion: kill all transitions / animations for users who opt out */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
