@@ -164,13 +164,10 @@ export default async function BlogPostPage({
                 <FadeIn direction="left">
                   <div className="bg-forest-green rounded-2xl p-7 sticky top-24">
                     <h3 className="font-heading text-xl text-white font-bold mb-3">Get a Quote Today</h3>
-                    <p className="font-body text-white/70 text-sm mb-5">Same-day ssv business insurance quotes. Call or apply online.</p>
+                    <p className="font-body text-white/70 text-sm mb-5">Same-day ssv business insurance quotes. Apply online.</p>
                     <Link href="/quote" className="block w-full bg-ember-orange text-white text-center px-5 py-3 rounded-lg font-body font-bold text-sm hover:bg-ember-orange-dark transition-colors mb-3">
                       Get a Free Quote
                     </Link>
-                    <a href={SITE.phoneHref} className="block w-full text-center text-white font-body text-sm py-2">
-                      Call {SITE.phone}
-                    </a>
                   </div>
                 </FadeIn>
 

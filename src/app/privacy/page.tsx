@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { SITE } from "@/lib/site";
@@ -20,7 +21,7 @@ export default function PrivacyPage() {
             <div><h2 className="font-heading text-lg text-bark font-bold mb-2">Information We Collect</h2><p>We collect information you provide when requesting a quote or contacting us: name, email, phone, business information. We also collect standard web analytics data.</p></div>
             <div><h2 className="font-heading text-lg text-bark font-bold mb-2">How We Use Your Information</h2><p>To prepare insurance quotes, respond to inquiries, and improve our services. We do not sell your personal information to third parties.</p></div>
             <div><h2 className="font-heading text-lg text-bark font-bold mb-2">Cookies</h2><p>We use cookies for analytics and to improve your browsing experience. You can disable cookies in your browser settings.</p></div>
-            <div><h2 className="font-heading text-lg text-bark font-bold mb-2">Contact</h2><p>Questions? Email <a href={`mailto:${SITE.email}`} className="text-forest-green">{SITE.email}</a> or call <a href={SITE.phoneHref} className="text-forest-green">{SITE.phone}</a>.</p></div>
+            <div><h2 className="font-heading text-lg text-bark font-bold mb-2">Contact</h2><p>Questions? Reach us through our <Link href="/contact" className="text-forest-green">contact form</Link>.</p></div>
           </div>
         </div>
       </main>

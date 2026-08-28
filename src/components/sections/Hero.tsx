@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Phone, ArrowRight, CheckCircle, ShieldCheck } from "lucide-react";
+import { ArrowRight, CheckCircle, ShieldCheck } from "lucide-react";
 import { SITE } from "@/lib/site";
 import { FadeIn } from "@/components/animations/FadeIn";
 
@@ -57,13 +57,6 @@ export function Hero() {
                   Get a Free Quote
                   <ArrowRight className="w-4 h-4" />
                 </Link>
-                <a
-                  href={SITE.phoneHref}
-                  className="inline-flex items-center justify-center gap-2 border-2 border-brand text-brand px-7 py-3.5 rounded-xl font-body font-bold text-base hover:bg-brand hover:text-white transition-all"
-                >
-                  <Phone className="w-4 h-4" />
-                  {SITE.phone}
-                </a>
               </div>
             </FadeIn>
 

@@ -4,18 +4,8 @@ export const SITE = {
   url: "https://ssvinsurance.com",
   tagline: "Side-by-Side & UTV Insurance for Sport Builds",
   description: "Specialty insurance for sport side-by-sides and UTVs — agreed value coverage, full accessories protection, and competition use options for Polaris RZR, Can-Am Maverick, Yamaha YXZ, and more. Licensed in all 50 states.",
-  phone: "844-967-5247",
-  phoneHref: "tel:+18449675247",
-  email: "josh@contractorschoiceagency.com",
   founded: 2005,
   npn: "8608479",
-  address: {
-    street: "12220 E Riggs Road, Suite #105",
-    city: "Chandler",
-    state: "AZ",
-    zip: "85249",
-    country: "US",
-  },
   hours: "Mon–Fri 8am–5pm (MST)",
   statesLicensed: "All 50 states",
 } as const;
@@ -27,7 +17,7 @@ export const SERVICES = [
     short: "Full coverage UTV and side-by-side insurance — agreed value, accessories, liability, and options for all brands and builds.",
     icon: "Gauge",
     description:
-      "UTV and side-by-side insurance with agreed value, accessories coverage, and options for sport and recreation use. All brands covered — Polaris, Can-Am, Yamaha, Honda, Kawasaki, and more. Free quote: 844-967-5247.",
+      "UTV and side-by-side insurance with agreed value, accessories coverage, and options for sport and recreation use. All brands covered — Polaris, Can-Am, Yamaha, Honda, Kawasaki, and more. Request a free quote online.",
     longDescription: `## UTV & Side-by-Side Insurance
 
 Sport side-by-sides and UTVs are not ATVs. A stock Polaris RZR Turbo R carries an MSRP north of $30,000. A Can-Am Maverick X3 with common aftermarket additions — long-travel suspension, light bars, stereo, cage and roof, wheels — can represent $40,000–$60,000 in total investment. Standard ATV/UTV policies from the big carriers price these machines with $500–$2,000 in custom parts coverage and actual cash value (ACV) payout.
@@ -385,7 +375,7 @@ export const FAQS = [
   },
   {
     q: "How do I get a side-by-side insurance quote?",
-    a: "Call 844-967-5247 or submit a quote request. We need: make, model, year, VIN, estimated total value including accessories, how and where you ride, rider age and experience, and a list of significant modifications. Same-day quotes in most cases.",
+    a: "Submit a quote request online. We need: make, model, year, VIN, estimated total value including accessories, how and where you ride, rider age and experience, and a list of significant modifications. Same-day quotes in most cases.",
   },
   {
     q: "Is UTV insurance required in my state?",

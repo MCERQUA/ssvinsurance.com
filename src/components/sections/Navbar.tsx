@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { SITE, NAV_LINKS } from "@/lib/site";
 
 export function Navbar() {
@@ -47,13 +47,6 @@ export function Navbar() {
           </nav>
 
           <div className="hidden md:flex items-center gap-3">
-            <a
-              href={SITE.phoneHref}
-              className="flex items-center gap-1.5 font-body text-sm font-bold text-brand hover:text-brand-bright transition-colors"
-            >
-              <Phone className="w-3.5 h-3.5" />
-              {SITE.phone}
-            </a>
             <Link
               href="/quote"
               className="bg-cta text-white px-5 py-2 rounded-full font-body text-sm font-bold shadow-cta hover:bg-cta-dark hover:-translate-y-0.5 transition-all"

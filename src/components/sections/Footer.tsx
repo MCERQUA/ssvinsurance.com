@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin } from "lucide-react";
 import { SITE, SERVICES, NAV_LINKS } from "@/lib/site";
 
 export function Footer() {
@@ -24,18 +23,6 @@ export function Footer() {
               Specialty insurance for sport side-by-sides and UTVs. Agreed value, accessories
               coverage, and competition options. Licensed in all 50 states since {SITE.founded}.
             </p>
-            <div className="space-y-2.5">
-              <a href={SITE.phoneHref} className="flex items-center gap-2 font-body text-sm text-cta hover:text-cta-soft transition-colors">
-                <Phone className="w-4 h-4 flex-shrink-0" />{SITE.phone}
-              </a>
-              <a href={`mailto:${SITE.email}`} className="flex items-center gap-2 font-body text-sm text-white/60 hover:text-white transition-colors">
-                <Mail className="w-4 h-4 flex-shrink-0" />{SITE.email}
-              </a>
-              <div className="flex items-start gap-2 font-body text-sm text-white/60">
-                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <span>{SITE.address.street}, {SITE.address.city}, {SITE.address.state} {SITE.address.zip}</span>
-              </div>
-            </div>
           </div>
 
           <div>
@@ -68,7 +55,7 @@ export function Footer() {
           <div>
             <h3 className="font-heading font-bold text-white mb-4 text-sm uppercase tracking-wider">Get Covered</h3>
             <p className="font-body text-sm text-white/60 mb-4 leading-relaxed">
-              Same-day quotes for sport UTVs and side-by-sides. Call or fill out our quick quote form.
+              Same-day quotes for sport UTVs and side-by-sides. Fill out our quick quote form to get started.
             </p>
             <Link
               href="/quote"
@@ -76,12 +63,6 @@ export function Footer() {
             >
               Get a Free Quote
             </Link>
-            <a
-              href={SITE.phoneHref}
-              className="block w-full text-center border border-white/20 text-white px-4 py-2.5 rounded-xl font-body text-sm hover:border-white/40 transition-colors"
-            >
-              Call {SITE.phone}
-            </a>
           </div>
         </div>
 

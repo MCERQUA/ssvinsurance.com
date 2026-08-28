@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { CheckCircle, ArrowLeft, Phone, ArrowRight } from "lucide-react";
+import { CheckCircle, ArrowLeft, ArrowRight } from "lucide-react";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { FadeIn } from "@/components/animations/FadeIn";
@@ -183,9 +183,6 @@ export default async function ServicePage({
                     <Link href="/quote" className="block w-full bg-ember-orange text-white text-center px-5 py-3 rounded-lg font-body font-bold text-sm hover:bg-ember-orange-dark transition-colors mb-3">
                       Request a Free Quote
                     </Link>
-                    <a href={SITE.phoneHref} className="block w-full text-center text-white font-body font-semibold text-sm hover:text-white/80 transition-colors py-2">
-                      Call {SITE.phone}
-                    </a>
                   </div>
                 </FadeIn>
 

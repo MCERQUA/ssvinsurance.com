@@ -26,17 +26,7 @@ const jsonLd = {
   name: SITE.name,
   description: SITE.description,
   url: SITE.url,
-  telephone: SITE.phone,
-  email: SITE.email,
   foundingDate: SITE.founded.toString(),
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: SITE.address.street,
-    addressLocality: SITE.address.city,
-    addressRegion: SITE.address.state,
-    postalCode: SITE.address.zip,
-    addressCountry: SITE.address.country,
-  },
   areaServed: "US",
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",

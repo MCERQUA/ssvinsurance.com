@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { CheckCircle, Phone } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { CTABand } from "@/components/sections/CTABand";
@@ -66,14 +66,11 @@ export default function AboutPage() {
             <FadeIn>
               <div className="bg-forest-green-50 border border-forest-green/20 rounded-2xl p-8 md:p-12 text-center">
                 <h2 className="font-heading text-2xl sm:text-3xl text-bark font-bold mb-4">Ready to Get Your SSV Insurance Operation Insured?</h2>
-                <p className="font-body text-muted mb-8 max-w-xl mx-auto">Same-day quotes for ssv businesses. Call or fill out our quote form and we'll have your options ready today.</p>
+                <p className="font-body text-muted mb-8 max-w-xl mx-auto">Same-day quotes for ssv businesses. Fill out our quote form and we'll have your options ready today.</p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link href="/quote" className="inline-flex items-center justify-center gap-2 bg-ember-orange text-white px-7 py-3.5 rounded-lg font-body font-bold hover:bg-ember-orange-dark transition-colors">
                     Get a Free Quote
                   </Link>
-                  <a href={SITE.phoneHref} className="inline-flex items-center justify-center gap-2 border-2 border-forest-green text-forest-green px-7 py-3.5 rounded-lg font-body font-bold hover:bg-forest-green hover:text-white transition-colors">
-                    <Phone className="w-4 h-4" />{SITE.phone}
-                  </a>
                 </div>
               </div>
             </FadeIn>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Phone, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { SITE } from "@/lib/site";
 import { FadeIn } from "@/components/animations/FadeIn";
 
@@ -30,13 +30,6 @@ export function CTABand() {
               Get Your Free Quote
               <ArrowRight className="w-4 h-4" />
             </Link>
-            <a
-              href={SITE.phoneHref}
-              className="inline-flex items-center justify-center gap-2 bg-white/10 border border-white/30 text-white px-8 py-4 rounded-xl font-body font-bold text-base hover:bg-white/20 transition-all"
-            >
-              <Phone className="w-4 h-4" />
-              {SITE.phone}
-            </a>
           </div>
         </FadeIn>
       </div>

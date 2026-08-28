@@ -18,17 +18,7 @@ const jsonLd = {
       "@id": `${SITE.url}/#business`,
       name: SITE.name,
       url: SITE.url,
-      telephone: SITE.phone,
-      email: SITE.email,
       description: SITE.description,
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: SITE.address.street,
-        addressLocality: SITE.address.city,
-        addressRegion: SITE.address.state,
-        postalCode: SITE.address.zip,
-        addressCountry: SITE.address.country,
-      },
       openingHours: "Mo-Fr 08:00-17:00",
       areaServed: { "@type": "Country", name: "United States" },
       hasOfferCatalog: {

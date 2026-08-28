@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { CheckCircle, Phone } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { FadeIn } from "@/components/animations/FadeIn";
@@ -22,6 +22,8 @@ const COVERAGE_OPTIONS = [
 export default function QuotePage() {
   const [formData, setFormData] = useState({
     name: "", email: "", phone: "", company: "",
+    dateOfBirth: "",
+    licenseNumber: "", licenseIssueDate: "", licenseExpirationDate: "",
     operationType: "", annualRevenue: "", crewSize: "",
     coverageNeeded: "", state: "", message: "",
   });
@@ -106,10 +108,6 @@ export default function QuotePage() {
                       <CheckCircle className="w-14 h-14 text-forest-green mx-auto mb-4" />
                       <h2 className="font-heading text-2xl text-bark font-bold mb-3">Quote Request Received!</h2>
                       <p className="font-body text-muted mb-2">We&apos;ll prepare your quote and be in touch today.</p>
-                      <p className="font-body text-sm text-muted">
-                        For immediate assistance, call{" "}
-                        <a href={SITE.phoneHref} className="text-forest-green font-bold">{SITE.phone}</a>
-                      </p>
                     </div>
                   ) : (
                     <div className="bg-white rounded-2xl border border-border p-8">
@@ -131,6 +129,13 @@ export default function QuotePage() {
                           {field("company", "Company / Business Name")}
                           {field("email", "Email Address", "email")}
                           {field("phone", "Phone Number", "tel")}
+                        </div>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                          {field("dateOfBirth", "Date of Birth", "date")}
+                          {field("licenseNumber", "Driver's License Number")}
+                          {field("licenseIssueDate", "License Issue Date", "date")}
+                          {field("licenseExpirationDate", "License Expiration Date", "date")}
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -181,14 +186,12 @@ export default function QuotePage() {
               <aside className="space-y-5">
                 <FadeIn direction="left">
                   <div className="bg-forest-green rounded-2xl p-7">
-                    <h3 className="font-heading text-lg text-white font-bold mb-3">Prefer to Call?</h3>
+                    <h3 className="font-heading text-lg text-white font-bold mb-3">What Happens Next</h3>
                     <p className="font-body text-white/70 text-sm mb-4">
-                      Our specialists are ready to quote you now.
+                      Submit the form and one of our specialists reviews your details and prepares
+                      your quote — same-day turnaround in most cases.
                     </p>
-                    <a href={SITE.phoneHref} className="flex items-center gap-2 text-ember-orange font-body font-bold">
-                      <Phone className="w-4 h-4" />{SITE.phone}
-                    </a>
-                    <p className="font-body text-white/50 text-xs mt-2">{SITE.hours}</p>
+                    <p className="font-body text-white/50 text-xs">{SITE.hours}</p>
                   </div>
                 </FadeIn>
                 <FadeIn direction="left" delay={0.05}>
