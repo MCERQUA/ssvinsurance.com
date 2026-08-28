@@ -19,3 +19,5 @@ deploy_key.pub
 # pnpm store (never commit - 425MB)
 .pnpm-store
 .pnpm-store/
+
+.autosave-gated
