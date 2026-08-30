@@ -20,7 +20,7 @@ export function WhyChooseUs() {
             <div className="relative h-[480px] rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src="/images/ssv-structure.jpg"
-                alt="SSV Insurance contractor structure"
+                alt="Three sport side-by-side UTVs riding in convoy on a red desert trail at sunset"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"

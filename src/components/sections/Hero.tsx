@@ -75,7 +75,7 @@ export function Hero() {
           <FadeIn delay={0.1} direction="left" className="relative h-[500px] lg:h-[620px] rounded-3xl overflow-hidden shadow-float">
             <Image
               src="/images/hero-ssv.jpg"
-              alt="Sport side-by-side UTV on desert trail"
+              alt="Sport side-by-side UTV on a red sand dune at sunset"
               fill
               className="object-cover"
               priority
