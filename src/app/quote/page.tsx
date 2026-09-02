@@ -26,19 +26,21 @@ export default function QuotePage() {
     licenseNumber: "", licenseIssueDate: "", licenseExpirationDate: "",
     operationType: "", annualRevenue: "", crewSize: "",
     coverageNeeded: "", state: "", message: "",
+    streetAddress: "", vehicleYear: "", vehicleMake: "", vehicleModel: "", vehicleVin: "", vehicleValue: "", accessoriesValue: "", currentCarrierName: "", currentPolicyNumber: "", currentPolicyStartDate: "", currentPolicyExpirationDate: "", currentCoverageLimits: "", priorAutoInsurance: "", driverNames: "", accessoriesDescription: "", coverageType: "",
   });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    // capture the form node before any await — e.currentTarget is only valid
+    // while the handler is on the stack.
+    const form = e.currentTarget;
     setLoading(true);
     try {
-      await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams({ "form-name": "quote", ...formData }).toString(),
-      });
+      // multipart, not urlencoded: this form carries two file inputs and an
+      // application/x-www-form-urlencoded body cannot hold a file.
+      await fetch("/", { method: "POST", body: new FormData(form) });
       setSubmitted(true);
     } catch {
       setSubmitted(true);
@@ -118,6 +120,7 @@ export default function QuotePage() {
                         name="quote"
                         method="POST"
                         data-netlify="true"
+                        encType="multipart/form-data"
                         onSubmit={handleSubmit}
                         className="space-y-5"
                       >
@@ -154,6 +157,44 @@ export default function QuotePage() {
                           ])}
                           {select("coverageNeeded", "Coverage Needed", COVERAGE_OPTIONS)}
                           {field("state", "Primary State of Operations")}
+                        </div>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                          {field("streetAddress", "Street Address")}
+                          {field("vehicleYear", "Vehicle Year", "number")}
+                          {field("vehicleMake", "Vehicle Make")}
+                          {field("vehicleModel", "Vehicle Model")}
+                          {field("vehicleVin", "VIN (one per vehicle)")}
+                          {field("vehicleValue", "Vehicle Value ($)")}
+                          {field("accessoriesValue", "Accessories Value ($)")}
+                          {field("currentCarrierName", "Current or Prior Carrier")}
+                          {field("currentPolicyNumber", "Current Policy Number")}
+                          {field("currentPolicyStartDate", "Current Policy Start Date", "date")}
+                          {field("currentPolicyExpirationDate", "Current Policy Expiration Date", "date")}
+                          {field("currentCoverageLimits", "Current Coverage Limits")}
+                          {field("priorAutoInsurance", "Prior Auto Insurance (carrier and dates, or \"none\")")}
+                          {select("coverageType", "Coverage Type", ["Liability only", "Liability + Physical Damage", "Full coverage", "Not sure"])}
+                        </div>
+
+                        <div>
+                          <label className="block font-body text-sm font-bold text-bark mb-1.5">All Drivers (name, date of birth and license number for each)<span className="text-ember-orange ml-1">*</span></label>
+                          <textarea name="driverNames" rows={3} required value={formData.driverNames} onChange={(e) => setFormData({ ...formData, driverNames: e.target.value })} className="w-full px-4 py-2.5 border border-border rounded-lg font-body text-sm text-bark focus:outline-none focus:border-forest-green resize-none bg-white" />
+                        </div>
+
+                        <div>
+                          <label className="block font-body text-sm font-bold text-bark mb-1.5">Accessories & Add-Ons (describe)<span className="text-ember-orange ml-1">*</span></label>
+                          <textarea name="accessoriesDescription" rows={3} required value={formData.accessoriesDescription} onChange={(e) => setFormData({ ...formData, accessoriesDescription: e.target.value })} className="w-full px-4 py-2.5 border border-border rounded-lg font-body text-sm text-bark focus:outline-none focus:border-forest-green resize-none bg-white" />
+                        </div>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                          <label className="block font-body text-sm font-bold text-bark mb-1.5">Upload Driver's License</label>
+                          <input type="file" name="driversLicenseUpload" className="w-full px-4 py-2.5 border border-border rounded-lg font-body text-sm text-bark bg-white" />
+                        </div>
+                        <div>
+                          <label className="block font-body text-sm font-bold text-bark mb-1.5">Upload Insurance Card</label>
+                          <input type="file" name="insuranceCardUpload" className="w-full px-4 py-2.5 border border-border rounded-lg font-body text-sm text-bark bg-white" />
+                        </div>
                         </div>
 
                         <div>
