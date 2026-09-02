@@ -84,9 +84,10 @@ export function QuotePopup() {
           </h2>
         </div>
         <div style={{ padding: "20px 22px 22px" }}>
-          <p style={{ margin: "0 0 12px", fontSize: 14, lineHeight: 1.6, color: "#374151" }}>By submitting your information online, our AI software gathers everything we need to prepare your quote accurately — so our agents can work more efficiently and get back to you faster.</p>
+          <p style={{ margin: "0 0 12px", fontSize: 14, lineHeight: 1.6, color: "#374151" }}>Our agents are working on quotes now, and submitting online lets our AI gather what we need.</p>
           <p style={{ margin: "0 0 12px", fontSize: 14, lineHeight: 1.6, color: "#374151" }}>
-            If you'd prefer to speak with someone, you're welcome to submit the form first and then call us at 844-967-5247.
+            If you'd prefer to speak with someone please call us at{" "}
+            <a href={PHONE_HREF} style={{ color: BRAND, fontWeight: 700, whiteSpace: "nowrap" }}>{PHONE}</a>
           </p>
           <p style={{ margin: "0 0 18px", fontSize: 14, lineHeight: 1.6, color: "#374151" }}>
             Please submit whatever you can &mdash; every detail you give us saves both of us time.
