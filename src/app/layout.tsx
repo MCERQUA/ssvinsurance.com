@@ -3,6 +3,7 @@ import { headingFont, bodyFont } from "@/lib/fonts";
 import { SITE, SERVICES } from "@/lib/site";
 import { SmoothScroll } from "@/components/animations/SmoothScroll";
 import "./globals.css";
+import { QuotePopup, FloatingQuoteBar } from "@/components/QuotePopup";
 
 export const metadata: Metadata = {
   title: {
@@ -67,6 +68,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <SmoothScroll />
         {children}
+        <QuotePopup />
+        <FloatingQuoteBar />
       </body>
     </html>
   );
