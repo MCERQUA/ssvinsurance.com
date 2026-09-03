@@ -10,17 +10,38 @@ const PHONE_HREF = "tel:+18449675247";
 const QUOTE_ROUTE = "/quote";
 
 export function FloatingQuoteBar() {
+  const barRef = useRef<HTMLDivElement>(null);
+
+  // Reserve the bar's own height at the end of the page so no in-flow control can sit under it.
+  // Measured rather than hard-coded: the bar wraps to two lines on narrow viewports.
+  useEffect(() => {
+    const el = barRef.current;
+    if (!el) return;
+    const apply = () => {
+      document.body.style.paddingBottom =
+        `calc(${el.offsetHeight}px + env(safe-area-inset-bottom, 0px))`;
+    };
+    apply();
+    const ro = new ResizeObserver(apply);
+    ro.observe(el);
+    window.addEventListener("resize", apply);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", apply);
+      document.body.style.paddingBottom = "";
+    };
+  }, []);
   return (
-    <div style={{ position: "fixed", left: 0, right: 0, bottom: 0, zIndex: 9998, background: "#ffffff",
+    <div ref={barRef} style={{ pointerEvents: "none", position: "fixed", left: 0, right: 0, bottom: 0, zIndex: 9998, background: "#ffffff",
                   borderTop: `3px solid ${BRAND}`, boxShadow: "0 -4px 18px rgba(0,0,0,0.14)" }}>
       <div style={{ maxWidth: 1100, margin: "0 auto", padding: "10px 16px", display: "flex", flexWrap: "wrap",
                     alignItems: "center", justifyContent: "space-between", gap: 10 }}>
         <p style={{ margin: 0, fontSize: 14, color: "#1f2937", lineHeight: 1.45 }}>
           <strong>Our agents are working on quotes now.</strong>{" "}Submit online to get in the queue faster — or call{" "}
-          <a href={PHONE_HREF} style={{ color: BRAND, fontWeight: 700, whiteSpace: "nowrap" }}>{PHONE}</a>.
+          <a href={PHONE_HREF} style={{ pointerEvents: "auto", color: BRAND, fontWeight: 700, whiteSpace: "nowrap" }}>{PHONE}</a>.
         </p>
         <Link href={QUOTE_ROUTE}
-          style={{ background: BRAND, color: "#fff", padding: "10px 20px", borderRadius: 999,
+          style={{ pointerEvents: "auto", background: BRAND, color: "#fff", padding: "10px 20px", borderRadius: 999,
                    fontWeight: 700, fontSize: 14, whiteSpace: "nowrap", textDecoration: "none" }}>
           Request a Quote &rarr;
         </Link>
@@ -87,7 +108,7 @@ export function QuotePopup() {
           <p style={{ margin: "0 0 12px", fontSize: 14, lineHeight: 1.6, color: "#374151" }}>By submitting your information online, our AI software gathers everything we need to prepare your quote accurately — so our agents can work more efficiently and get back to you faster.</p>
           <p style={{ margin: "0 0 12px", fontSize: 14, lineHeight: 1.6, color: "#374151" }}>
             If you'd prefer to speak with someone please call us at{" "}
-            <a href={PHONE_HREF} style={{ color: BRAND, fontWeight: 700, whiteSpace: "nowrap" }}>{PHONE}</a>
+            <a href={PHONE_HREF} style={{ pointerEvents: "auto", color: BRAND, fontWeight: 700, whiteSpace: "nowrap" }}>{PHONE}</a>
           </p>
           <p style={{ margin: "0 0 18px", fontSize: 14, lineHeight: 1.6, color: "#374151" }}>
             Please submit whatever you can &mdash; every detail you give us saves both of us time.
