@@ -26,6 +26,7 @@ export default function QuotePage() {
     licenseNumber: "", licenseIssueDate: "", licenseExpirationDate: "",
     operationType: "", annualRevenue: "", crewSize: "",
     coverageNeeded: "", state: "", message: "",
+    city: "", zip: "",
     streetAddress: "", vehicleYear: "", vehicleMake: "", vehicleModel: "", vehicleVin: "", vehicleValue: "", accessoriesValue: "", currentCarrierName: "", currentPolicyNumber: "", currentPolicyStartDate: "", currentPolicyExpirationDate: "", currentCoverageLimits: "", priorAutoInsurance: "", driverNames: "", accessoriesDescription: "", coverageType: "",
   });
   const [submitted, setSubmitted] = useState(false);
@@ -156,11 +157,77 @@ export default function QuotePage() {
                             "1 (Owner only)", "2–5", "6–10", "11–20", "21–50", "50+",
                           ])}
                           {select("coverageNeeded", "Coverage Needed", COVERAGE_OPTIONS)}
-                          {field("state", "Primary State of Operations")}
+                          <div key="state">
+                            <label className="block font-body text-sm font-bold text-bark mb-1.5">
+                              Primary State of Operations<span className="text-ember-orange ml-1">*</span>
+                            </label>
+                            <select
+                              name="state"
+                              required
+                              value={formData.state}
+                              onChange={(e) => setFormData({ ...formData, state: e.target.value })}
+                              className="w-full px-4 py-2.5 border border-border rounded-lg font-body text-sm text-bark focus:outline-none focus:border-forest-green bg-white"
+                            >
+                              <option value="">Select...</option>
+                              <option key="AL" value="AL">Alabama</option>
+                              <option key="AK" value="AK">Alaska</option>
+                              <option key="AZ" value="AZ">Arizona</option>
+                              <option key="AR" value="AR">Arkansas</option>
+                              <option key="CA" value="CA">California</option>
+                              <option key="CO" value="CO">Colorado</option>
+                              <option key="CT" value="CT">Connecticut</option>
+                              <option key="DE" value="DE">Delaware</option>
+                              <option key="DC" value="DC">District of Columbia</option>
+                              <option key="FL" value="FL">Florida</option>
+                              <option key="GA" value="GA">Georgia</option>
+                              <option key="HI" value="HI">Hawaii</option>
+                              <option key="ID" value="ID">Idaho</option>
+                              <option key="IL" value="IL">Illinois</option>
+                              <option key="IN" value="IN">Indiana</option>
+                              <option key="IA" value="IA">Iowa</option>
+                              <option key="KS" value="KS">Kansas</option>
+                              <option key="KY" value="KY">Kentucky</option>
+                              <option key="LA" value="LA">Louisiana</option>
+                              <option key="ME" value="ME">Maine</option>
+                              <option key="MD" value="MD">Maryland</option>
+                              <option key="MA" value="MA">Massachusetts</option>
+                              <option key="MI" value="MI">Michigan</option>
+                              <option key="MN" value="MN">Minnesota</option>
+                              <option key="MS" value="MS">Mississippi</option>
+                              <option key="MO" value="MO">Missouri</option>
+                              <option key="MT" value="MT">Montana</option>
+                              <option key="NE" value="NE">Nebraska</option>
+                              <option key="NV" value="NV">Nevada</option>
+                              <option key="NH" value="NH">New Hampshire</option>
+                              <option key="NJ" value="NJ">New Jersey</option>
+                              <option key="NM" value="NM">New Mexico</option>
+                              <option key="NY" value="NY">New York</option>
+                              <option key="NC" value="NC">North Carolina</option>
+                              <option key="ND" value="ND">North Dakota</option>
+                              <option key="OH" value="OH">Ohio</option>
+                              <option key="OK" value="OK">Oklahoma</option>
+                              <option key="OR" value="OR">Oregon</option>
+                              <option key="PA" value="PA">Pennsylvania</option>
+                              <option key="RI" value="RI">Rhode Island</option>
+                              <option key="SC" value="SC">South Carolina</option>
+                              <option key="SD" value="SD">South Dakota</option>
+                              <option key="TN" value="TN">Tennessee</option>
+                              <option key="TX" value="TX">Texas</option>
+                              <option key="UT" value="UT">Utah</option>
+                              <option key="VT" value="VT">Vermont</option>
+                              <option key="VA" value="VA">Virginia</option>
+                              <option key="WA" value="WA">Washington</option>
+                              <option key="WV" value="WV">West Virginia</option>
+                              <option key="WI" value="WI">Wisconsin</option>
+                              <option key="WY" value="WY">Wyoming</option>
+                            </select>
+                          </div>
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                           {field("streetAddress", "Street Address")}
+                          {field("city", "City")}
+                          {field("zip", "ZIP Code")}
                           {field("vehicleYear", "Vehicle Year", "number")}
                           {field("vehicleMake", "Vehicle Make")}
                           {field("vehicleModel", "Vehicle Model")}
