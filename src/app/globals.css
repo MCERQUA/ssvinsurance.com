@@ -55,7 +55,9 @@
 }
 
 @layer utilities {
-  .container-xl      { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
+  /* overflow-x: clip keeps FadeIn's pre-animation translateX(24px) from
+     widening the page on mobile; unlike hidden it does not break sticky. */
+  .container-xl      { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; overflow-x: clip; }
   .container-feature { @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8; }
   .container-prose   { @apply max-w-3xl mx-auto px-4 sm:px-6 lg:px-8; }
 
