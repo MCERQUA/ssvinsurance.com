@@ -101,18 +101,20 @@ export function QuotePopup() {
           <p style={{ margin: 0, fontSize: 11, letterSpacing: "0.08em", textTransform: "uppercase",
                       color: "rgba(255,255,255,0.85)" }}>A note from our team</p>
           <h2 id="quote-popup-title" style={{ margin: "6px 0 0", fontSize: 20, lineHeight: 1.25, color: "#fff", fontWeight: 800 }}>
-            Our agents are actively working on quotes right now
+            Thank you for visiting our site! Let's Get Your Quote Started!!
           </h2>
         </div>
         <div style={{ padding: "20px 22px 22px" }}>
-          <p style={{ margin: "0 0 12px", fontSize: 14, lineHeight: 1.6, color: "#374151" }}>By submitting your information online, our AI software gathers everything we need to prepare your quote accurately — so our agents can work more efficiently and get back to you faster.</p>
+          <p style={{ margin: "0 0 12px", fontSize: 14, lineHeight: 1.6, color: "#374151" }}>Our agents are actively working on quotes and helping customers find the right coverage.</p>
+          <p style={{ margin: "0 0 12px", fontSize: 14, lineHeight: 1.6, color: "#374151" }}>The fastest way to get started is to submit your information online. Our technology helps organize the details you provide so our agents can spend more time reviewing your needs, comparing options, and preparing your quote.</p>
+          <p style={{ margin: "0 0 12px", fontSize: 14, lineHeight: 1.6, color: "#374151" }}>Don't worry if you don't have all the answers.</p>
+          <p style={{ margin: "0 0 12px", fontSize: 14, lineHeight: 1.6, color: "#374151" }}>Just fill out what you can. Even partial information helps us get started, and one of our agents will follow up if we need anything else.</p>
+          <p style={{ margin: "0 0 4px", fontSize: 14, lineHeight: 1.6, color: "#374151" }}>Prefer to speak with someone?</p>
           <p style={{ margin: "0 0 12px", fontSize: 14, lineHeight: 1.6, color: "#374151" }}>
-            If you'd prefer to speak with someone please call us at{" "}
-            <a href={PHONE_HREF} style={{ pointerEvents: "auto", color: BRAND, fontWeight: 700, whiteSpace: "nowrap" }}>{PHONE}</a>
+            Give us a call at{" "}
+            <a href={PHONE_HREF} style={{ pointerEvents: "auto", color: BRAND, fontWeight: 700, whiteSpace: "nowrap" }}>{PHONE}</a>. We're happy to help.
           </p>
-          <p style={{ margin: "0 0 18px", fontSize: 14, lineHeight: 1.6, color: "#374151" }}>
-            Please submit whatever you can &mdash; every detail you give us saves both of us time.
-          </p>
+          <p style={{ margin: "0 0 18px", fontSize: 14, lineHeight: 1.6, color: "#374151", fontWeight: 700 }}>Submit what you know, and we'll take it from there.</p>
           <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
             <Link href={QUOTE_ROUTE} onClick={dismiss}
               style={{ flex: "1 1 180px", textAlign: "center", background: BRAND, color: "#fff",
@@ -122,7 +124,7 @@ export function QuotePopup() {
             <button onClick={dismiss}
               style={{ flex: "1 1 120px", background: "#fff", color: "#374151", border: "1px solid #d1d5db",
                        padding: "12px 18px", borderRadius: 10, fontWeight: 600, fontSize: 14, cursor: "pointer" }}>
-              Not now
+              Browse Site for More Information
             </button>
           </div>
         </div>
